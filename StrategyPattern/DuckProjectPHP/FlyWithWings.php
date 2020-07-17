@@ -1,7 +1,7 @@
 <?php
-require_once('FlyBehaviorStrategy.php');
+require_once('IFlyBehaviorStrategy.php');
 
-class FlyWithWings implements FlyBehaviorStrategy {
+class FlyWithWings implements IFlyBehaviorStrategy {
 
     public function fly() {
         echo "I can fly with my wings!!!<br />";

@@ -1,5 +1,5 @@
 <?php
-interface FlyBehaviorStrategy {
+interface IFlyBehaviorStrategy {
 
     public function fly();
 }

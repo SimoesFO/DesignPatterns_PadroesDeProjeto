@@ -1,5 +1,5 @@
 <?php
-interface QuackBehaviorStrategy {
+interface IQuackBehaviorStrategy {
 
     public function quack();
 }
