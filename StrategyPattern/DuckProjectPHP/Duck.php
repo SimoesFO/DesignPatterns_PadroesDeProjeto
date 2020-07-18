@@ -6,6 +6,7 @@ abstract class Duck {
 
     function __construct(IFlyBehaviorStrategy $flyBehavior, IQuackBehaviorStrategy $quackBehavior) {
         $this->setFlyBehavior($flyBehavior);
+        $this->setQuackBehavior($quackBehavior);
     }
 
     public function setFlyBehavior(IFlyBehaviorStrategy $flyBehavior) {
