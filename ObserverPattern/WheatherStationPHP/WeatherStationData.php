@@ -12,17 +12,23 @@ class WeatherStationData implements IObservable {
     $this->temperature = 0;
   }
 
+
   public function add(IObserver $observer) {
     $this->listObservers[] = $observer;
   }
 
+
   public function remove(IObserver $observer) {
-    //$this->listObservers
+    foreach ($this->listObservers as $key => $obs) {
+      if($obs == $observer) {
+        unset($this->listObservers[$key]);
+        return;
+      }
+    }
   }
 
 
   public function notify() {
-
     foreach ($this->listObservers as $observer) {
       $observer->update();
     }
@@ -33,10 +39,12 @@ class WeatherStationData implements IObservable {
     return $this->temperature;
   }
 
+
   public function setTemperature(float $temperature) {
     $this->temperature = $temperature;
     $this->notify();
   }
+
 
   public function setDatas(float $temperature = null) {
     
@@ -45,6 +53,5 @@ class WeatherStationData implements IObservable {
       $this->setTemperature(round($temperature));
     }
   }
-
 }
 ?>
